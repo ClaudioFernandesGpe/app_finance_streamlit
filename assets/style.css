@@ -1,0 +1,23 @@
+.stApp {
+    background-color: #141517;
+    color: #a5abaf;
+}
+
+img[data-testid="stSidebarLogo"], img[data-testid="stHeaderLogo"] {
+        height: 3.5rem; 
+        width: auto;
+    }
+
+hr {
+    margin: 1em 0px !important;
+}
+
+[data-testid="stToolbar"], 
+[data-testid="stSidebar"],
+[data-testid="stMetric"] {
+        background-color: #1f1f24 !important;
+}
+
+[data-testid="stMetric"] {
+    border: 1px solid #1f1f24;
+}

@@ -6,17 +6,20 @@ import database as db
 
 st.set_page_config(
     page_title = 'CF Finanças Pessoais',
-    page_icon = ':moneybag:',
+    page_icon = "assets/money-management.png",
     layout = 'wide',
     initial_sidebar_state = 'expanded'
 )
 
 db.inicializar_banco()
 
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # NAVEGAÇÃO LOCAL - SIDEBAR
 # =================================================================================
 
-st.logo(image="assets/$cf_finance.png", size="large")
+st.logo(image="assets/cffinance.png", size="large")
 
 page_dashboard = st.Page(
     page="views/dashboard.py",
@@ -27,13 +30,13 @@ page_dashboard = st.Page(
 
 page_new_transition = st.Page(
     page="views/transitions.py",
-    title= "Nova Transação",
+    title= "Nova Movimentação",
     icon= ":material/add_box:"  
 )
 
 page_transitions_historic = st.Page(
     page="views/history.py",
-    title= "Histórico de Transações",
+    title= "Histórico de Movimentações",
     icon= ":material/monitoring:"  
 )
 
