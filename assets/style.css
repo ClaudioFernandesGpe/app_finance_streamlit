@@ -21,3 +21,16 @@ hr {
 [data-testid="stMetric"] {
     border: 1px solid #1f1f24;
 }
+
+[data-testid="stForm"] {
+    border: 1px solid #141517;
+}
+
+[data-testid= "stBaseButton-secondaryFormSubmit"] {
+    background-color: #01497c;
+    border: none;
+}
+
+[data-testid= "stBaseButton-secondaryFormSubmit"]:hover {
+    background-color: #013a63;
+}

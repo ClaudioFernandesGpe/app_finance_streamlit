@@ -14,3 +14,6 @@ fiery orange gradient =
 
 blue gradient =
 ["#e3f2fd","#bbdefb","#90caf9","#64b5f6","#42a5f5","#2196f3","#1e88e5","#1976d2","#1565c0","#0d47a1"]
+
+color pallete =
+["#b73a28","#ff6200","#ff8300","#ffae00","#003865","#236192","#e2f0fb","#a8d600"]

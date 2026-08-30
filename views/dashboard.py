@@ -85,7 +85,7 @@ else:
         x= "Mês",
         y= ["Receitas", "Despesas"],
         barmode= "group",
-        color_discrete_map= {"Receitas": "#1565C0", "Despesas": "#ff8300"},
+        color_discrete_map= {"Receitas": "#01497c", "Despesas": "#ff8300"},
         labels= {"value": "R$ Valor", "variable": "Tipo"},
         title= "Receitas vs. Despesas Por Mês"
     )
@@ -113,7 +113,7 @@ if not desp_cat:
     st.info(":material/chat_info: Nenhuma despesa cadastrada esse mês!")
 else:
     df_cat = pd.DataFrame(desp_cat)
-    my_custom_colors = ["#b73a28","#ff6200","#ff8300","#ffae00","#003865","#236192","#e2f0fb","#a8d600"]
+    my_custom_colors = ["#012a4a","#013a63","#01497c","#014f86","#2a6f97","#2c7da0","#468faf","#61a5c2","#89c2d9","#a9d6e5"]
     
     fig_pie= px.pie(
         df_cat,
