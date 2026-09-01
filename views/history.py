@@ -110,5 +110,5 @@ with col_btn:
             st.success(f"✅ Movimentação #{int(id_excluir)} removida com sucesso!")
             st.rerun()
         else:
-            st.error("❌ ID não encontrado nas movimentações exibidas!")
+            st.error("❗ ID não encontrado nas movimentações exibidas!")
             

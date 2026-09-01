@@ -97,7 +97,7 @@ def listar_categorias(tipo: str | None = None ) -> list[dict]:
         sql += " WHERE tipo = ?"
         # O '?' é um placeholder parametrizado - protege contra SQL Injection
         params = (tipo,)
-    sql += " ORDER BY tipo, nome DESC" 
+    sql += " ORDER BY tipo, nome ASC" 
 
     with _conectar() as conn:
         # O dict(r) converte cada sqlite3.Row em um dicionário Python puro.
@@ -114,7 +114,7 @@ def inserir_categoria(nome: str, tipo: str) -> None:
 
 def deletar_categoria(categoria_id: int) -> None:
     """ Remove uma categoria pelo seu ID """
-    with _conectar as conn:
+    with _conectar() as conn:
         conn.execute("DELETE FROM categorias WHERE id = ?", (categoria_id,))
 
 # CRUD - TRANSAÇÕES
