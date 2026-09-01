@@ -67,7 +67,7 @@ def inicializar_banco() -> None:
                 tipo         TEXT NOT NULL CHECK (tipo IN ('Receita', 'Despesa'))
             );
         """)
-
+ 
         # Só insere o SEED se a tabela de categorias estiver vazia.
         # Isso evita duplicar os dados a cada reinicialização do APP.
         qtd = conn.execute("SELECT COUNT(*) FROM categorias").fetchone()[0]
@@ -133,15 +133,19 @@ def listar_transacoes(mes: int | None = None, ano: int | None = None, tipo: str 
 
     sql = """
         SELECT t.id, t.data, t.tipo, c.nome AS categoria, t.descricao, t.valor
-        FROM transacoes AS t,
-        JOIN categorias c ON c.id = t.id_categoria,
+        FROM transacoes AS t
+        JOIN categorias AS c ON c.id = t.categoria_id
         WHERE 1 = 1
     """
     params: list = []
 
     if mes and ano:
-        sql += " AND strftime('%m', t.data) = ? AND strftime('%Y', t.data) = ?"
-        params += [f"{mes:02d}", str(ano)]
+        sql += " AND strftime('%m', t.data) = ?" 
+        params.append(f"{mes:02d}")
+
+    if ano:
+        sql += " AND strftime('%Y', t.data) = ?"
+        params.append(str(ano))
 
     if tipo:
         sql += " AND t.tipo = ?"
@@ -155,7 +159,7 @@ def listar_transacoes(mes: int | None = None, ano: int | None = None, tipo: str 
 
 def deletar_transacao(transacao_id: int) -> None:
     with _conectar() as conn:
-        conn.execute("DELETE FROM transacoes WHERE id = ?", (transacao_id))
+        conn.execute("DELETE FROM transacoes WHERE id = ?", (transacao_id,))
 
 # CONSULTAS ANÁLITICAS - DASHBOARDS
 # ============================================================================

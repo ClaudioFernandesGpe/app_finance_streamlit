@@ -44,7 +44,7 @@ with col_mt2:
 with col_mt3:
     saldo = resumo["saldo"]
     st.metric(
-        label="⛃ Saldo Total",
+        label="🏦 Saldo Total",
         value= formatar_brl(resumo["saldo"]),
         border= True,
         delta= formatar_brl(saldo) if saldo != 0 else None,

@@ -20,6 +20,8 @@ hr {
 
 [data-testid="stMetric"] {
     border: 1px solid #1f1f24;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 [data-testid="stForm"] {
