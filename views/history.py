@@ -9,4 +9,5 @@ col1, col2 = st.columns([1, 11], vertical_alignment="center")
 with col1: 
     st.image("assets/transaction.png")
 with col2:
- st.title("Histórico de Movimentações")
+    st.title("Histórico de Movimentações")
+st.markdown("---")

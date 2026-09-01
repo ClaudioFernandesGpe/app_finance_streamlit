@@ -97,7 +97,7 @@ else:
         yaxis_tickformat = ",.2f",
     )
     
-    st.plotly_chart(fig_fluxo, use_container_width= True)
+    st.plotly_chart(fig_fluxo, width= "stretch")
     
 st.markdown("---")
 
@@ -130,4 +130,4 @@ else:
         paper_bgcolor= "rgba(0,0,0,0)",
     )
     
-    st.plotly_chart(fig_pie, use_container_width= True)
+    st.plotly_chart(fig_pie, width= "stretch")

@@ -50,7 +50,7 @@ with st.form("form_movimentacao", clear_on_submit= True):
         )
         
 
-    salvar= st.form_submit_button(":material/file_save: Salvar Movimentação", use_container_width= True)
+    salvar= st.form_submit_button(":material/file_save: Salvar Movimentação", width= "content")
     
     if salvar:
         erros= []
@@ -75,4 +75,5 @@ with st.form("form_movimentacao", clear_on_submit= True):
                 tipo= tipo,
             )
             st.success(f"✅️ Movimentação registrada com sucesso! {tipo}: {formatar_brl(valor)}")
+            
         
